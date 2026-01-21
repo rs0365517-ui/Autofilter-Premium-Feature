@@ -134,7 +134,7 @@ PREMIUM_USER = [int(user) if id_pattern.search(user) else user for user in envir
 # ============================
 # Miscellaneous Configuration
 # ============================
-ULTRA_FAST_MODE = is_enabled(environ.get('ULTRA_FAST_MODE', "True"), True) # Set to True for fast search, False for original search
+ULTRA_FAST_MODE = is_enabled(environ.get('ULTRA_FAST_MODE', "False"), False) # Set to True for fast search, False for original search
 
 MAX_B_TN = environ.get("MAX_B_TN", "5") # Maximum number of buttons in a row (default: 5)
 PORT = int(environ.get("PORT", "8080"))  # Port for the web server (default: 8080)
@@ -149,7 +149,7 @@ NO_RESULTS_MSG = bool(environ.get("NO_RESULTS_MSG", True))  # True if you want n
 MAX_BTN = is_enabled((environ.get('MAX_BTN', "True")), True)    # Max Button On (True) / Off (False)
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "False")), False)    # P_TTI_SHOW_OFF On (True) / Off (False)
 IMDB = is_enabled((environ.get('IMDB', "False")), False)    # IMDB Results On (True) / Off (False)
-TMDB_ON_SEARCH = is_enabled((environ.get('TMDB_ON_SEARCH', "True")), True)   # Use TMDB Poster On Search Results
+TMDB_ON_SEARCH = is_enabled((environ.get('TMDB_ON_SEARCH', "False")), False)   # Use TMDB Poster On Search Results
 AUTO_FFILTER = is_enabled((environ.get('AUTO_FFILTER', "True")), True) # Auto Filter On (True) / Off (False)
 AUTO_DELETE = is_enabled((environ.get('AUTO_DELETE', "True")), True) # Auto Delete On (True) / Off (False)
 LONG_IMDB_DESCRIPTION = is_enabled(environ.get("LONG_IMDB_DESCRIPTION", "False"), False) # Long IMDB Description On (True) / Off (False)
@@ -157,9 +157,9 @@ SPELL_CHECK_REPLY = is_enabled(environ.get("SPELL_CHECK_REPLY", "True"), True) #
 MELCOW_NEW_USERS = is_enabled((environ.get('MELCOW_NEW_USERS', "False")), False) # Melcow New Users On (True) / Off (False)
 PROTECT_CONTENT = is_enabled((environ.get('PROTECT_CONTENT', "False")), False) # Protect Content On (True) / Off (False)
 PM_SEARCH = bool(environ.get('PM_SEARCH', True))  # PM Search On (True) / Off (False)
-EMOJI_MODE = bool(environ.get('EMOJI_MODE', True))  # Emoji status On (True) / Off (False)
-BUTTON_MODE = is_enabled((environ.get('BUTTON_MODE', "True")), True) # pm & Group button or link mode (True) / Off (False)
-STREAM_MODE = bool(environ.get('STREAM_MODE', True)) # Set Stream mode True or False
+EMOJI_MODE = bool(environ.get('EMOJI_MODE', False))  # Emoji status On (True) / Off (False)
+BUTTON_MODE = is_enabled((environ.get('BUTTON_MODE', "False")), False) # pm & Group button or link mode (True) / Off (False)
+STREAM_MODE = bool(environ.get('STREAM_MODE', True))  # Set Stream mode True or False
 PREMIUM_STREAM_MODE = bool(environ.get('PREMIUM_STREAM_MODE', False)) # Set Stream mode True or False only for premium users
 
 
@@ -264,7 +264,7 @@ Bot_cmds = {
 
 
 #Don't Change Anything Here
-if MULTIPLE_DB == True:
+if MULTIPLE_DB == False:
     DATABASE_URI = DATABASE_URI
     DATABASE_URI2 = DATABASE_URI
 else:
